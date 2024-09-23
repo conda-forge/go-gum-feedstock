@@ -8,11 +8,13 @@ go-licenses save . --save_path=license-files --ignore github.com/mattn/go-locale
 # Manually copy licenses that go-licenses could not download
 cp -r ${RECIPE_DIR}/license-files/* ${SRC_DIR}/license-files
 
-mkdir -p ${PREFIX}/etc/bash_completion.d
-mkdir -p ${PREFIX}/share/fish/vendor_completions.d
-mkdir -p ${PREFIX}/share/zsh/site-functions
-mkdir -p ${PREFIX}/share/man/man1
-gum completion bash > ${PREFIX}/etc/bash_completion.d/gum
-gum completion fish > ${PREFIX}/share/fish/vendor_completions.d/gum.fish
-gum completion zsh > ${PREFIX}/share/zsh/site-functions/_gum
-gum man > ${PREFIX}/share/man/man1/gum.1
+if [[ ${build_platform} == ${target_platform} ]]; then
+    mkdir -p ${PREFIX}/etc/bash_completion.d
+    mkdir -p ${PREFIX}/share/fish/vendor_completions.d
+    mkdir -p ${PREFIX}/share/zsh/site-functions
+    mkdir -p ${PREFIX}/share/man/man1
+    gum completion bash > ${PREFIX}/etc/bash_completion.d/gum
+    gum completion fish > ${PREFIX}/share/fish/vendor_completions.d/gum.fish
+    gum completion zsh > ${PREFIX}/share/zsh/site-functions/_gum
+    gum man > ${PREFIX}/share/man/man1/gum.1
+fi
