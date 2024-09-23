@@ -1,5 +1,5 @@
 {% set name = "go-gum" %}
-{% set version = "0.14.1" %}
+{% set version = "0.14.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/charmbracelet/gum/archive/v{{ version }}.tar.gz
-  sha256: 28d1d50a29ede093809b08ee6ac2f8a1a9c748728f481835fad3d2b45b0cec83
+  sha256: b2c8101bb6f93acba420808df65b3f9acfe8cc9de283c1d9d94311123f43f271
 
 build:
   number: 0
