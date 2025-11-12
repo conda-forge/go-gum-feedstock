@@ -84,6 +84,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-go--gum-green.svg)](https://anaconda.org/conda-forge/go-gum) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/go-gum.svg)](https://anaconda.org/conda-forge/go-gum) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/go-gum.svg)](https://anaconda.org/conda-forge/go-gum) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/go-gum.svg)](https://anaconda.org/conda-forge/go-gum) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gum-green.svg)](https://anaconda.org/conda-forge/gum) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gum.svg)](https://anaconda.org/conda-forge/gum) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gum.svg)](https://anaconda.org/conda-forge/gum) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gum.svg)](https://anaconda.org/conda-forge/gum) |
 
 Installing go-gum
 =================
@@ -95,16 +96,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `go-gum` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `go-gum, gum` can be installed with `conda`:
 
 ```
-conda install go-gum
+conda install go-gum gum
 ```
 
 or with `mamba`:
 
 ```
-mamba install go-gum
+mamba install go-gum gum
 ```
 
 It is possible to list all of the versions of `go-gum` available on your platform with `conda`:
@@ -200,4 +201,5 @@ Feedstock Maintainers
 =====================
 
 * [@danielnachun](https://github.com/danielnachun/)
+* [@pavelzw](https://github.com/pavelzw/)
 
