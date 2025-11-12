@@ -1,28 +1,46 @@
 schema_version: 1
 
 context:
-  name: go-gum
+  name: gum
   version: 0.17.0
 
-package:
-  name: ${{ name|lower }}
-  version: ${{ version }}
-
 source:
-  url: https://github.com/charmbracelet/gum/archive/v${{ version }}.tar.gz
+  url: https://github.com/charmbracelet/${{ name }}/archive/v${{ version }}.tar.gz
   sha256: 763a7f89dfebf8e77f86e680bace48a09423cfb9e4b4f4ba22d2c9836d311f95
 
+recipe:
+  name: ${{ name }}
 build:
   number: 1
 
-requirements:
-  build:
-    - ${{ compiler('go-nocgo') }}
-    - go-licenses
-
-tests:
-  - script:
-      - gum --help
+outputs:
+  - package:
+      name: go-${{ name }}
+      version: ${{ version }}
+    build:
+      script:
+        - echo nothing to build
+      skip:
+        - target_platform != "linux-64"
+    requirements:
+      run:
+        - ${{ pin_subpackage(name, lower_bound="x.x.x", upper_bound="x.x.x") }}
+    tests:
+    - script:
+        - gum --help
+  - package:
+      name: ${{ name }}
+      version: ${{ version }}
+    requirements:
+      build:
+        - ${{ compiler('go-nocgo') }}
+        - go-licenses
+    build:
+      script:
+        file: build
+    tests:
+      - script:
+          - gum --help
 
 about:
   license: MIT
@@ -36,3 +54,4 @@ about:
 extra:
   recipe-maintainers:
     - danielnachun
+    - pavelzw
