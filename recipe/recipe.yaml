@@ -4,12 +4,14 @@ context:
   name: gum
   version: 0.17.0
 
+recipe:
+  name: ${{ name }}
+  version: ${{ version }}
+
 source:
   url: https://github.com/charmbracelet/${{ name }}/archive/v${{ version }}.tar.gz
   sha256: 763a7f89dfebf8e77f86e680bace48a09423cfb9e4b4f4ba22d2c9836d311f95
 
-recipe:
-  name: ${{ name }}
 build:
   number: 1
 
@@ -18,8 +20,6 @@ outputs:
       name: go-${{ name }}
       version: ${{ version }}
     build:
-      script:
-        - echo nothing to build
       skip:
         - target_platform != "linux-64"
     requirements:
@@ -37,7 +37,7 @@ outputs:
         - go-licenses
     build:
       script:
-        file: build
+        file: build-gum
     tests:
       - script:
           - gum --help
