@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.17.0
+  version: "2.0.0"
 
 package:
   name: go-gum
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/charmbracelet/gum/archive/v${{ version }}.tar.gz
-  sha256: 763a7f89dfebf8e77f86e680bace48a09423cfb9e4b4f4ba22d2c9836d311f95
+  sha256: 8a5baa1e1647cdc3f7fdf91939de5372791ab133117416c8e3d944afbf0b3c9c
 
 build:
   number: 0
